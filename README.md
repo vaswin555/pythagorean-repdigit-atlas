@@ -92,328 +92,89 @@ WHERE Fixed_Leg = '6666666666'
 ORDER BY LENGTH(Second_Leg) ASC, Second_Leg ASC 
 LIMIT 1;
 
-Methodology / Методология
+## 🔬 Methodology / Методология
+
 The computational pipeline consists of several optimized stages:
 
-Computational Core (C++): A search algorithm written in C++ using the GMP (GNU Multiple Precision Arithmetic Library) via the mpz_class class to process numbers exceeding 25 digits without precision loss.
-
-Algorithmic Filter: Pre-filtering of residues by small primes (SMALL_PRIMES_LIMIT = 100000) to avoid costly square-root operations on unsuitable numbers.
-
-Data Pipeline (Python & SQLite): Results from text logs are automatically parsed by a Python script and inserted into a relational SQLite database for subsequent indexing.
+1. **Computational Core (C++):** A search algorithm written in C++ using the **GMP (GNU Multiple Precision Arithmetic Library)** via the `mpz_class` class to process numbers exceeding 25 digits without precision loss.
+2. **Algorithmic Filter:** Pre-filtering of residues by small primes (`SMALL_PRIMES_LIMIT = 100000`) to avoid costly square-root operations on unsuitable numbers.
+3. **Data Pipeline (Python & SQLite):** Results from text logs are automatically parsed by a Python script and inserted into a relational SQLite database for subsequent indexing.
 
 Вычислительный конвейер состоит из нескольких оптимизированных этапов:
 
-Вычислительное ядро (C++): Поисковый алгоритм на C++ с использованием библиотеки длинной арифметики GMP через класс mpz_class для обработки чисел разрядностью выше 25 знаков без потери точности.
+1. **Вычислительное ядро (C++):** Поисковый алгоритм на C++ с использованием библиотеки длинной арифметики **GMP** через класс `mpz_class` для обработки чисел разрядностью выше 25 знаков без потери точности.
+2. **Алгоритмический фильтр:** Предварительная фильтрация остатков по малым простым числам (`SMALL_PRIMES_LIMIT = 100000`) для исключения ресурсоёмких операций извлечения корней из заведомо неподходящих чисел.
+3. **Конвейер данных (Python & SQLite):** Результаты расчётов из текстовых логов автоматически парсятся скриптом на Python и заносятся в реляционную базу данных SQLite для последующего индексирования.
 
-Алгоритмический фильтр: Предварительная фильтрация остатков по малым простым числам (SMALL_PRIMES_LIMIT = 100000) для исключения ресурсоёмких операций извлечения корней из заведомо неподходящих чисел.
+---
 
-Конвейер данных (Python & SQLite): Результаты расчётов из текстовых логов автоматически парсятся скриптом на Python и заносятся в реляционную базу данных SQLite для последующего индексирования.
+## 🔍 Interesting Observations / Интересные наблюдения
 
-🔍 Interesting Observations / Интересные наблюдения
-1. Beautiful Digit Patterns / Красивые цифровые паттерны
-During the generation, striking repeating patterns were discovered. For example, for the fixed leg 888888888888888 (fifteen 8s), the triples contain sequences like:
+### 1. Beautiful Digit Patterns / Красивые цифровые паттерны
 
-123456790123456790...
-
-987654320987654320...
+During the generation, striking repeating patterns were discovered. For example, for the fixed leg `888888888888888` (fifteen 8s), the triples contain sequences like:
+* `123456790123456790...`
+* `987654320987654320...`
 
 This highlights the deep cyclic nature of numbers when generating Pythagorean triples.
 
-В ходе генерации были обнаружены удивительные повторяющиеся паттерны. Например, для катета 888888888888888 (пятнадцать восьмёрок) тройки содержат последовательности вида:
-
-123456790123456790...
-
-987654320987654320...
+В ходе генерации были обнаружены удивительные повторяющиеся паттерны. Например, для катета `888888888888888` (пятнадцать восьмёрок) тройки содержат последовательности вида:
+* `123456790123456790...`
+* `987654320987654320...`
 
 Это подчёркивает глубокую циклическую природу чисел при генерации пифагоровых троек.
 
-2. Symmetry of Clusters 4 and 5 / Симметрия кластеров 4 и 5
-Clusters 4 (Fours) and 5 (Fives) produced an absolutely identical number of triples (120,112 each). A hypothesis is that this is due to the influence of the squares of prime numbers 
-2
-2
-2 
-2
-  and 
-5
-2
-5 
-2
-  in the factorization structure.
+### 2. Symmetry of Clusters 4 and 5 / Симметрия кластеров 4 и 5
 
-Кластеры 4 (Четвёрки) и 5 (Пятёрки) выдали абсолютно идентичное число троек (по 120 112). Гипотеза: влияние квадратов простых чисел 
-2
-2
-2 
-2
-  и 
-5
-2
-5 
-2
-  в структуре разложения сомножителей.
+Clusters 4 (Fours) and 5 (Fives) produced an absolutely identical number of triples (120,112 each). A hypothesis is that this is due to the influence of the squares of prime numbers $2^2$ and $5^2$ in the factorization structure.
 
-3. Extreme Asymmetry (
-c
-−
-b
-=
-1
-c−b=1 and 
-c
-−
-b
-=
-2
-c−b=2) / Экстремальная асимметрия
-Odd Asymmetry (
-c
-−
-b
-=
-1
-c−b=1): Found in the Ones cluster. The Diophantine equation yields exact formulas: 
-b
-=
-a
-2
-−
-1
-2
-b= 
-2
-a 
-2
- −1
-​
- , 
-c
-=
-a
-2
-+
-1
-2
-c= 
-2
-a 
-2
- +1
-​
- . For 
-a
-a consisting of 24 ones, 
-a
-2
-a 
-2
-  reaches 
-∼
-10
-46
-∼10 
-46
- , demonstrating the architecture's ability to capture analytical extremes far beyond the 
-10
-24
-10 
-24
-  iteration window.
+Кластеры 4 (Четвёрки) и 5 (Пятёрки) выдали абсолютно идентичное число троек (по 120 112). Гипотеза: влияние квадратов простых чисел $2^2$ и $5^2$ в структуре разложения сомножителей.
 
-Even Asymmetry (
-c
-−
-b
-=
-2
-c−b=2): Observed in even clusters (e.g., Fours). Formulas: 
-b
-=
-a
-2
-−
-4
-4
-b= 
-4
-a 
-2
- −4
-​
- , 
-c
-=
-a
-2
-+
-4
-4
-c= 
-4
-a 
-2
- +4
-​
- .
+### 3. Extreme Asymmetry ($c - b = 1$ and $c - b = 2$) / Экстремальная асимметрия
 
-Нечётная асимметрия (
-c
-−
-b
-=
-1
-c−b=1): Обнаружена в кластере Единиц. Диофантово уравнение даёт точные формулы: 
-b
-=
-a
-2
-−
-1
-2
-b= 
-2
-a 
-2
- −1
-​
- , 
-c
-=
-a
-2
-+
-1
-2
-c= 
-2
-a 
-2
- +1
-​
- . Для 
-a
-a из 24 единиц 
-a
-2
-a 
-2
-  достигает 
-∼
-10
-46
-∼10 
-46
- , что доказывает способность архитектуры фиксировать аналитические экстремумы далеко за пределами окна перебора 
-10
-24
-10 
-24
- .
+*   **Odd Asymmetry ($c - b = 1$):** Found in the Ones cluster. The Diophantine equation yields exact formulas: $b = \frac{a^2 - 1}{2}$, $c = \frac{a^2 + 1}{2}$. For $a$ consisting of 24 ones, $a^2$ reaches $\sim 10^{46}$, demonstrating the architecture's ability to capture analytical extremes far beyond the $10^{24}$ iteration window.
+*   **Even Asymmetry ($c - b = 2$):** Observed in even clusters (e.g., Fours). Formulas: $b = \frac{a^2 - 4}{4}$, $c = \frac{a^2 + 4}{4}$.
 
-Чётная асимметрия (
-c
-−
-b
-=
-2
-c−b=2): Наблюдается в чётных кластерах (например, Четвёрки). Формулы: 
-b
-=
-a
-2
-−
-4
-4
-b= 
-4
-a 
-2
- −4
-​
- , 
-c
-=
-a
-2
-+
-4
-4
-c= 
-4
-a 
-2
- +4
-​
- .
+*   **Нечётная асимметрия ($c - b = 1$):** Обнаружена в кластере Единиц. Диофантово уравнение даёт точные формулы: $b = \frac{a^2 - 1}{2}$, $c = \frac{a^2 + 1}{2}$. Для $a$ из 24 единиц $a^2$ достигает $\sim 10^{46}$, что доказывает способность архитектуры фиксировать аналитические экстремумы далеко за пределами окна перебора $10^{24}$.
+*   **Чётная асимметрия ($c - b = 2$):** Наблюдается в чётных кластерах (например, Четвёрки). Формулы: $b = \frac{a^2 - 4}{4}$, $c = \frac{a^2 + 4}{4}$.
 
-🚀 Roadmap / Планы по развитию
-Complete the 1–9 matrix: Finalize the C++ computational runs for Clusters 8 (Eights) and 9 (Nines).
+---
 
-Final verification: Perform a validation pass across all 9 clusters to guarantee 100% accuracy of the reference dataset.
+## 🚀 Roadmap / Планы по развитию
 
-Analytical expansion: Integrate "Fast-Shortcut" triggers into the C++ core to automatically generate boundary triples for 
-c
-−
-b
-=
-1
-c−b=1 and 
-c
-−
-b
-=
-2
-c−b=2 without brute-force iteration, instantly extending the database to 50-digit numbers for extreme triangles.
+1. **Complete the 1–9 matrix:** Finalize the C++ computational runs for Clusters 8 (Eights) and 9 (Nines).
+2. **Final verification:** Perform a validation pass across all 9 clusters to guarantee 100% accuracy of the reference dataset.
+3. **Analytical expansion:** Integrate "Fast-Shortcut" triggers into the C++ core to automatically generate boundary triples for $c - b = 1$ and $c - b = 2$ without brute-force iteration, instantly extending the database to 50-digit numbers for extreme triangles.
+4. **Public release:** Publish the repository as an open-source verified atlas for the global mathematical community.
 
-Public release: Publish the repository as an open-source verified atlas for the global mathematical community.
+1. **Полное закрытие матрицы (1–9):** Доведение вычислительных прогонов на C++ до логического финала — расчёта и заливки данных по Восьмёркам и Девяткам.
+2. **Финальная сверка данных:** Повторный валидационный проход по всем 9 кластерам для исключения случайных системных опечаток или пропусков, гарантирующий 100% точность справочника.
+3. **Аналитическое расширение:** Интеграция в C++ ядро триггеров быстрого вычисления (Fast-Shortcut), которые при фиксации катета $a$ автоматически генерируют пограничные тройки для $c - b = 1$ и $c - b = 2$, минуя стадию циклического брутфорса. Это позволит мгновенно расширить рамки базы данных до 50-значных чисел для экстремальных треугольников.
+4. **Публикация:** Перевод репозитория в публичный доступ для мирового математического сообщества как открытого верифицированного Open Source атласа.
 
-Полное закрытие матрицы (1–9): Доведение вычислительных прогонов на C++ до логического финала — расчёта и заливки данных по Восьмёркам и Девяткам.
+---
 
-Финальная сверка данных: Повторный валидационный проход по всем 9 кластерам для исключения случайных системных опечаток или пропусков, гарантирующий 100% точность справочника.
+## 📚 References / Ссылки
 
-Аналитическое расширение: Интеграция в C++ ядро триггеров быстрого вычисления (Fast-Shortcut), которые при фиксации катета 
-a
-a автоматически генерируют пограничные тройки для 
-c
-−
-b
-=
-1
-c−b=1 и 
-c
-−
-b
-=
-2
-c−b=2, минуя стадию циклического брутфорса. Это позволит мгновенно расширить рамки базы данных до 50-значных чисел для экстремальных треугольников.
+- **Habib Muzaffar, Konstantine Zelator. "Pythagorean Triangles with Repeated Digits – Different Bases" (2009).** arXiv:0908.3866. This work explores Pythagorean triangles where legs or hypotenuses consist of repeated digits in various number bases, providing a foundational context for the current dataset.
+- **Andrew Delph. "The Scaling-Palindrome Theorem for Multibase Pythagorean Triples" (2025).** Zenodo. Investigates how scaling primitive triples by palindromic repdigit factors generates new triples with palindromic digit structures, directly relating to the observed "beautiful" numbers in this atlas.
+- **OEIS (On-Line Encyclopedia of Integer Sequences).** Sequence **A010785** — the repdigit numbers themselves. The data in this repository can be used to investigate related sequences involving Pythagorean triples.
+- **Fabrizio Caruso. "Primitive-Pythagorean-Triples".** GitHub repository. An example of an existing project cataloging primitive Pythagorean triples, providing a reference point for the current work.
+- **Zenodo Record. "The Pell Spine as an Optimal Rational Separator..." (2026).** Explores extreme Pythagorean triples (near-isosceles), resonating with the extreme asymmetry cases ($c - b = 1$ or $2$) covered in this atlas.
 
-Публикация: Перевод репозитория в публичный доступ для мирового математического сообщества как открытого верифицированного Open Source атласа.
+---
 
-📚 References / Ссылки
-Habib Muzaffar, Konstantine Zelator. "Pythagorean Triangles with Repeated Digits – Different Bases" (2009). arXiv:0908.3866. This work explores Pythagorean triangles where legs or hypotenuses consist of repeated digits in various number bases, providing a foundational context for the current dataset.
+## 📜 License / Лицензия
 
-Andrew Delph. "The Scaling-Palindrome Theorem for Multibase Pythagorean Triples" (2025). Zenodo. Investigates how scaling primitive triples by palindromic repdigit factors generates new triples with palindromic digit structures, directly relating to the observed "beautiful" numbers in this atlas.
+*(License file will be added soon / Файл лицензии будет добавлен в ближайшее время)*
 
-OEIS (On-Line Encyclopedia of Integer Sequences). Sequence A010785 — the repdigit numbers themselves. The data in this repository can be used to investigate related sequences involving Pythagorean triples.
+*Planned License: Creative Commons Attribution 4.0 International (CC BY 4.0).*
+*Планируемая лицензия: Creative Commons Attribution 4.0 International (CC BY 4.0).*
 
-Fabrizio Caruso. "Primitive-Pythagorean-Triples". GitHub repository. An example of an existing project cataloging primitive Pythagorean triples, providing a reference point for the current work.
+---
 
-Zenodo Record. "The Pell Spine as an Optimal Rational Separator..." (2026). Explores extreme Pythagorean triples (near-isosceles), resonating with the extreme asymmetry cases (
-c
-−
-b
-=
-1
-c−b=1 or 
-2
-2) covered in this atlas.
+## 👤 Author / Автор
 
-📜 License / Лицензия
-(License file will be added soon / Файл лицензии будет добавлен в ближайшее время)
-
-Planned License: Creative Commons Attribution 4.0 International (CC BY 4.0).
-Планируемая лицензия: Creative Commons Attribution 4.0 International (CC BY 4.0).
-
-👤 Author / Автор
-vaswin555
-Created as part of a deep mathematical research project.
-Создано в рамках глубокого математического исследовательского проекта.
+**vaswin555**
+*Created as part of a deep mathematical research project.*
+*Создано в рамках глубокого математического исследовательского проекта.*
