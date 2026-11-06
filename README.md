@@ -128,7 +128,7 @@ This highlights the deep cyclic nature of numbers when generating Pythagorean tr
 
 Clusters 4 (Fours) and 5 (Fives) produced an absolutely identical number of triples (120,112 each). A hypothesis is that this is due to the influence of the squares of prime numbers $2^2$ and $5^2$ in the factorization structure.
 
-Кластеры 4 (Четвёрки) и 5 (Пятёрки) выдали абсолютно идентичное число троек (по 120 112). Гипотеза: влияние квадратов простых чисел $2^2$ и $5^2$ в структуре разложения сомножителей.
+Кластеры 4 (Четвёрки) и 5 (Пятёрки) выдали абсолютно идентичное число троек (по 132 260). Гипотеза: влияние квадратов простых чисел $2^2$ и $5^2$ в структуре разложения сомножителей.
 
 ### 3. Extreme Asymmetry ($c - b = 1$ and $c - b = 2$) / Экстремальная асимметрия
 
@@ -147,7 +147,7 @@ Clusters 4 (Fours) and 5 (Fives) produced an absolutely identical number of trip
 3. **Analytical expansion:** Integrate "Fast-Shortcut" triggers into the C++ core to automatically generate boundary triples for $c - b = 1$ and $c - b = 2$ without brute-force iteration, instantly extending the database to 50-digit numbers for extreme triangles.
 4. **Public release:** Publish the repository as an open-source verified atlas for the global mathematical community.
 
-1. **Полное закрытие матрицы (1–9):** Доведение вычислительных прогонов на C++ до логического финала — расчёта и заливки данных по Восьмёркам и Девяткам.
+1. **Полное закрытие матрицы (1–9):** Доведение вычислительных прогонов на C++ до логического финала.
 2. **Финальная сверка данных:** Повторный валидационный проход по всем 9 кластерам для исключения случайных системных опечаток или пропусков, гарантирующий 100% точность справочника.
 3. **Аналитическое расширение:** Интеграция в C++ ядро триггеров быстрого вычисления (Fast-Shortcut), которые при фиксации катета $a$ автоматически генерируют пограничные тройки для $c - b = 1$ и $c - b = 2$, минуя стадию циклического брутфорса. Это позволит мгновенно расширить рамки базы данных до 50-значных чисел для экстремальных треугольников.
 4. **Публикация:** Перевод репозитория в публичный доступ для мирового математического сообщества как открытого верифицированного Open Source атласа.
