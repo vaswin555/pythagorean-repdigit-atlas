@@ -126,7 +126,7 @@ This highlights the deep cyclic nature of numbers when generating Pythagorean tr
 
 ### 2. Symmetry of Clusters 4 and 5 / Симметрия кластеров 4 и 5
 
-Clusters 4 (Fours) and 5 (Fives) produced an absolutely identical number of triples (120,112 each). A hypothesis is that this is due to the influence of the squares of prime numbers $2^2$ and $5^2$ in the factorization structure.
+Clusters 4 (Fours) and 5 (Fives) produced an absolutely identical number of triples (132,260 each). A hypothesis is that this is due to the influence of the squares of prime numbers $2^2$ and $5^2$ in the factorization structure.
 
 Кластеры 4 (Четвёрки) и 5 (Пятёрки) выдали абсолютно идентичное число троек (по 132 260). Гипотеза: влияние квадратов простых чисел $2^2$ и $5^2$ в структуре разложения сомножителей.
 
