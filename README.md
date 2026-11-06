@@ -154,13 +154,35 @@ Clusters 4 (Fours) and 5 (Fives) produced an absolutely identical number of trip
 
 ---
 
-## 📚 References / Ссылки
+## 📚 References / Bibliography
 
-- **Habib Muzaffar, Konstantine Zelator. "Pythagorean Triangles with Repeated Digits – Different Bases" (2009).** arXiv:0908.3866. This work explores Pythagorean triangles where legs or hypotenuses consist of repeated digits in various number bases, providing a foundational context for the current dataset.
-- **Andrew Delph. "The Scaling-Palindrome Theorem for Multibase Pythagorean Triples" (2025).** Zenodo. Investigates how scaling primitive triples by palindromic repdigit factors generates new triples with palindromic digit structures, directly relating to the observed "beautiful" numbers in this atlas.
-- **OEIS (On-Line Encyclopedia of Integer Sequences).** Sequence **A010785** — the repdigit numbers themselves. The data in this repository can be used to investigate related sequences involving Pythagorean triples.
-- **Fabrizio Caruso. "Primitive-Pythagorean-Triples".** GitHub repository. An example of an existing project cataloging primitive Pythagorean triples, providing a reference point for the current work.
-- **Zenodo Record. "The Pell Spine as an Optimal Rational Separator..." (2026).** Explores extreme Pythagorean triples (near-isosceles), resonating with the extreme asymmetry cases ($c - b = 1$ or $2$) covered in this atlas.
+1.  **Muzaffar, H., & Zelator, K. (2009). "Pythagorean Triangles with Repeated Digits – Different Bases."** *arXiv:0908.3866 [math.GM]*.
+    *   **Description:** This foundational paper investigates the existence and properties of Pythagorean triangles where the lengths of the legs or hypotenuse are repdigits (numbers consisting of repeating digits) in various number bases. It provides the direct theoretical context for studying triples with repeated-digit fixed legs.
+    *   **Link:** [https://arxiv.org/abs/0908.3866](https://arxiv.org/abs/0908.3866)
+
+2.  **Delph, A. (2025). "The Scaling-Palindrome Theorem for Multibase Pythagorean Triples."** *Zenodo*.
+    *   **Description:** This work presents a theorem on digit-string symmetries that emerge when primitive Pythagorean triples are scaled by palindromic repdigit factors in an arbitrary base. It directly relates to the "beautiful" palindromic number patterns observed in the generated dataset (e.g., sequences like `123456790...`).
+    *   **Link:** [https://zenodo.org/records/16593599](https://zenodo.org/records/16593599)
+
+3.  **"The Pell Spine as an Optimal Rational Separator: Extremal Resolution and Smooth Transport in Primitive Pythagorean Triples." (2026).** *Zenodo*.
+    *   **Description:** This paper studies extremal problems in primitive Pythagorean triples, specifically focusing on the normalized leg separation \(\Delta k = |b-a|/c\). It proves that record minima occur at near-isosceles triples forming a Pell-generated sequence, which resonates with the extreme asymmetric cases (\(c - b = 1\) or \(2\)) captured in this atlas. It also includes an exhaustive computational enumeration of 795,763 primitive triples for independent verification.
+    *   **Link:** [https://zenodo.org/records/21510911](https://zenodo.org/records/21510911)
+
+4.  **Cazorla García, P.-J. (2025). "On generalised Pythagorean triples over number fields."** *arXiv:2506.11636 [math.NT]*.
+    *   **Description:** This paper provides a survey and extension of results on generalized Pythagorean triples (integer solutions to \(ax^2 + by^2 + cz^2 = 0\)) over number fields. It offers a broader theoretical perspective on Diophantine equations related to the Pythagorean theorem.
+    *   **Link:** [https://arxiv.org/abs/2506.11636](https://arxiv.org/abs/2506.11636)
+
+5.  **Okagbue, H. I., Adamu, M. O., Oguntunde, P. E., Opanuga, A. A., Owoloko, E. A., & Bishop, S. A. (2017). "Datasets on the statistical and algebraic properties of primitive Pythagorean triples."** *Data in Brief*, 14, 686-694.
+    *   **Description:** This article describes a dataset derived from the statistical and algebraic analysis of the first 331 primitive Pythagorean triples. It serves as an excellent example of how mathematical datasets can be structured, analyzed, and published, providing a methodological reference for this project's data presentation.
+    *   **DOI:** [https://doi.org/10.1016/j.dib.2017.08.021](https://doi.org/10.1016/j.dib.2017.08.021)
+
+6.  **OEIS Foundation Inc. "Sequence A010785: Repdigit numbers."** *The On-Line Encyclopedia of Integer Sequences*.
+    *   **Description:** The authoritative encyclopedia entry for the sequence of repdigit numbers (1, 2, ..., 9, 11, 22, 33, ...), which form the basis of the fixed legs in this atlas.
+    *   **Link:** [https://oeis.org/A010785](https://oeis.org/A010785)
+
+7.  **The GNU Multiple Precision Arithmetic Library (GMP).**
+    *   **Description:** The official documentation for the arbitrary-precision arithmetic library used in the C++ computational core to handle numbers exceeding standard integer limits without precision loss.
+    *   **Link:** [https://gmplib.org/](https://gmplib.org/)
 
 ---
 
