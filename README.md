@@ -59,15 +59,15 @@ Below is the verified and preliminary summary of the total number of solutions r
 
 | Cluster / Кластер | Base Digit / Базовая цифра | Total Triples / Всего троек |
 | :--- | :--- | :--- |
-| Cluster 1 | Единицы (1) | 39,993 |
-| Cluster 2 | Двойки (2) | 40,002 |
-| Cluster 3 | Тройки (3) | 68,302 |
-| Cluster 4 | Четвёрки (4) | **120,112** (Peak) |
-| Cluster 5 | Пятёрки (5) | **120,112** (Symmetric Peak) |
-| Cluster 6 | Шестёрки (6) | 69,190 |
-| Cluster 7 | Семёрки (7) | 71,176 |
-| Cluster 8 | Восьмёрки (8) | *In progress / В процессе* |
-| Cluster 9 | Девятки (9) | *In progress / В процессе* |
+| Cluster 1 | Единицы (1) | **44,041** (Minimum)|
+| Cluster 2 | Двойки (2) | 44,050 |
+| Cluster 3 | Тройки (3) | 79,964 |
+| Cluster 4 | Четвёрки (4) | 132,260 |
+| Cluster 5 | Пятёрки (5) | 132,260 |
+| Cluster 6 | Шестёрки (6) | 80,054 |
+| Cluster 7 | Семёрки (7) | 83,984 |
+| Cluster 8 | Восьмёрки (8) | **220,443** (Peak) |
+| Cluster 9 | Девятки (9) | 116,031 |
 
 ---
 
